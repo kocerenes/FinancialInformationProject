@@ -74,6 +74,9 @@ dependencies {
     implementation Libs.Hilt.android
     kapt Libs.Hilt.compiler
 
+    //Coil
+    implementation Libs.Image.coil
+
     // Glide
     implementation Libs.Image.glide
     annotationProcessor Libs.Image.compiler
