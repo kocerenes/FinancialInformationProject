@@ -1,7 +1,6 @@
 package com.ekheek.financialinformationproject.presentation.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +9,11 @@ import coil.load
 import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.FragmentNewsDetailBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NewsDetailFragment : Fragment() {
+class NewsDetailFragment : BottomSheetDialogFragment() {
 
     private var _binding: FragmentNewsDetailBinding? = null
 
