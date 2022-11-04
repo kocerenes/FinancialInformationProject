@@ -20,4 +20,5 @@ object Versions {
     const val retrofit = "2.9.0"
     const val ok_http = "4.7.2"
     const val glide = "4.14.2"
+    const val coil = "1.4.0"
 }
