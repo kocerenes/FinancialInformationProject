@@ -8,40 +8,20 @@
     tools:context=".presentation.detail.NewsDetailFragment">
 
 
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewNews"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:elevation="16dp"
-        android:layout_margin="4dp"
-        app:cardCornerRadius="16dp">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageViewNews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
-
-    </com.google.android.material.card.MaterialCardView>
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
-
-        <TextView
-            android:id="@+id/textViewGoToWebView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textColor="#5454F1"
-            android:text="Haberin Devamını Görmek İçin Tıklayın..."
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
         <TextView
             android:id="@+id/textViewAuthor"
