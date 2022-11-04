@@ -13,13 +13,11 @@ class GetNewsUseCase @Inject constructor(
     private val repository: NewsRepository
 ) {
     operator fun invoke(
-        countryCode: String,
-        category: String,
-        apiKey: String
+        category: String
     ): Flow<Resource<ArticleResponse>> = flow {
         try {
             emit(Resource.Loading())
-            val news = repository.getNews(countryCode = countryCode, category = category, apiKey = apiKey)
+            val news = repository.getNews(category = category)
             emit(Resource.Success(data = news))
         } catch (e: IOException) {
             emit(Resource.Error(message = e.localizedMessage))

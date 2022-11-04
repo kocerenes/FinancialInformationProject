@@ -1,8 +1,11 @@
 package com.ekheek.financialinformationproject.util
 
+import com.ekheek.financialinformationproject.BuildConfig
+
 object Constants {
 
     const val NEWS_BASE_URL = "https://newsapi.org/"
     const val NEWS_END_POINT = "v2/top-headlines"
-    const val API_KEY = "5dc482f21ba344f6860646545cbc89eb"
+    const val NEWS_API_KEY = BuildConfig.NEWS_API_KEY
+    const val NEWS_COUNTRY_CODE = "tr"
 }

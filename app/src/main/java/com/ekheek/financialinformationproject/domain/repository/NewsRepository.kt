@@ -4,5 +4,5 @@ import com.ekheek.financialinformationproject.data.remote.model.ArticleResponse
 
 interface NewsRepository {
 
-    suspend fun getNews(countryCode: String, category: String, apiKey: String): ArticleResponse
+    suspend fun getNews(category: String): ArticleResponse
 }

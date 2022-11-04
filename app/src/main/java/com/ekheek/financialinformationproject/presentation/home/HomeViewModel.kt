@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ekheek.financialinformationproject.data.remote.model.ArticleResponse
 import com.ekheek.financialinformationproject.domain.use_case.get_news.GetNewsUseCase
-import com.ekheek.financialinformationproject.util.Constants.API_KEY
 import com.ekheek.financialinformationproject.util.DataState
 import com.ekheek.financialinformationproject.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,7 +24,7 @@ class HomeViewModel @Inject constructor(
         get() = _news
 
     fun getNews() {
-        getNewsUseCase(countryCode = "tr", category = "business", apiKey = API_KEY)
+        getNewsUseCase(category = "business")
             .onEach { resource ->
                 when (resource) {
                     is Resource.Loading -> {

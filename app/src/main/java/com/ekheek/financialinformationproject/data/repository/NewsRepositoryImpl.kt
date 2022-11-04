@@ -10,10 +10,8 @@ class NewsRepositoryImpl @Inject constructor(
 ) : NewsRepository {
 
     override suspend fun getNews(
-        countryCode: String,
-        category: String,
-        apiKey: String
+        category: String
     ): ArticleResponse {
-        return newsApi.getNews(countryCode = countryCode, category = category, apiKey = apiKey)
+        return newsApi.getNews(category = category)
     }
 }
