@@ -50,6 +50,7 @@ object Libs {
     object Image {
         const val glide: String = "com.github.bumptech.glide:glide:" + Versions.glide
         const val compiler = "com.github.bumptech.glide:compiler:" + Versions.glide
+        const val coil = "io.coil-kt:coil:" + Versions.coil
     }
 
     object Test {
