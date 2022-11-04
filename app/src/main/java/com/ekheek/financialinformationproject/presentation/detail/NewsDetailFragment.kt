@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.ekheek.financialinformationproject.R
@@ -35,6 +36,16 @@ class NewsDetailFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindUI(getArticle())
+        onClickSeeDetailsTextView()
+    }
+
+    private fun onClickSeeDetailsTextView() = binding.textViewGoToWebView.setOnClickListener {
+        navigateToWebView(getArticle().url.toString())
+    }
+
+    private fun navigateToWebView(url: String) {
+        val action = NewsDetailFragmentDirections.actionNewsDetailFragmentToNewsWebViewFragment(url)
+        findNavController().navigate(action)
     }
 
     private fun getArticle() = navigationArgs.article
