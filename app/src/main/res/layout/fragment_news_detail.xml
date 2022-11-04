@@ -11,14 +11,15 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="16dp"
         android:layout_margin="4dp"
+        android:elevation="16dp"
         app:cardCornerRadius="16dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/news_image"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -38,8 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="#5454F1"
             android:text="Haberin Devamını Görmek İçin Tıklayın..."
+            android:textColor="#5454F1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
