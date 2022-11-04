@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.FragmentHomeBinding
+import com.ekheek.financialinformationproject.presentation.home.adapter.CategoryAdapter
+import com.ekheek.financialinformationproject.presentation.home.adapter.ItemClickListener
 import com.ekheek.financialinformationproject.presentation.home.adapter.NewsAdapter
 import com.ekheek.financialinformationproject.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,17 +28,44 @@ class HomeFragment : Fragment() {
 
     private val newsAdapter by lazy { NewsAdapter(::onArticleCLick) }
 
+    private lateinit var categoryAdapter: CategoryAdapter
+    private var categoryList = mutableListOf<String>()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
+        createCategoryList()
         setupRecyclerView()
         requestApi()
-
+        onCategoryClick()
         return binding.root
+    }
+
+    private fun createCategoryList() {
+        categoryList.add("business")
+        categoryList.add("entertainment")
+        categoryList.add("general")
+        categoryList.add("health")
+        categoryList.add("science")
+        categoryList.add("sports")
+        categoryList.add("technology")
+    }
+
+    private fun setupCategoryRecyclerView() {
+        binding.rvCategories.adapter = categoryAdapter
+        categoryAdapter.news = categoryList
+    }
+
+    private fun onCategoryClick() = binding.rvCategories.apply {
+        categoryAdapter = CategoryAdapter(object : ItemClickListener {
+            override fun onItemClick(category: String) {
+                requestApi(category)
+            }
+        })
+        setupCategoryRecyclerView()
     }
 
     private fun setupRecyclerView() {
@@ -44,8 +73,8 @@ class HomeFragment : Fragment() {
         binding.rvNews.layoutManager = LinearLayoutManager(requireContext())
     }
 
-    private fun requestApi() {
-        homeViewModel.getNews()
+    private fun requestApi(category: String? = null) {
+        homeViewModel.getNews(category)
         lifecycleScope.launch {
             homeViewModel.news.collect {
                 when (it) {
