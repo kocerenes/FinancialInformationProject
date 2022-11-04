@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".presentation.detail.NewsDetailFragment">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/textViewAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:padding="@dimen/double_extra_small_padding"
+            android:text="@string/example_author"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Fenerbahçe grup lideri! (ÖZET) Dinamo Kiev - Fenerbahçe maç sonucu: 0-2 - Fanatik"
+            android:textSize="@dimen/large_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
+
+        <TextView
+            android:id="@+id/textViewContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Jorge Jesus yönetimindeki Fenerbahçe , UEFAAvrupa Ligi B Grubu 6. ve son maçnda Dinamo Kiev'le kar karya geldi. ki takm arasnda grupta stanbul'da oynanan ilk karlamay Sar Lacivertliler 2-1 kazanmt. G… [+3155 chars]"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Süper Lig devi Fenerbahçe, UEFA Avrupa Ligi B Grubu 6. ve son maçında Dinamo Kievle kozlarını paylaştı. Kanarya lider geldiği Polonyadan lider döndü! Sarı-Lacivertliler; Arda Güler be Willian Araonun attığı gollerle 2-0 kazandı. Rennes de evinde AEK Larnacayl…  "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewContent" />
+
+        <TextView
+            android:id="@+id/textViewPublishedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:drawablePadding="2dp"
+            android:padding="4dp"
+            android:text="2 saat önce"
+            android:textColor="@color/white"
+            app:drawableLeftCompat="@drawable/ic_published_at_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
