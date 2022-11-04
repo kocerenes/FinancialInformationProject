@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.ItemNewsBinding
 
@@ -41,6 +42,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
                 with(binding) {
                     imageView.load(urlToImage) {
                         crossfade(600)
+                        error(R.drawable.ic_error_placeholder)
                     }
                     tvNewsName.text = title
                     tvAuthor.text = author
