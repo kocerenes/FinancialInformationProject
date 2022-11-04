@@ -10,9 +10,28 @@ import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.ItemNewsBinding
 
-class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
+class NewsAdapter(
+    private val onArticleClick: ((article: Article) -> Unit)?
+) : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
 
-    class MyViewHolder(val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(private val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(
+            article: Article,
+            onArticleClick: ((article: Article) -> Unit)?
+        ) = binding.apply {
+            imageView.load(article.urlToImage) {
+                crossfade(600)
+                error(R.drawable.ic_error_placeholder)
+            }
+            tvNewsName.text = article.title
+            tvAuthor.text = article.author
+            tvPublishedAt.text = article.publishedAt
+
+            root.setOnClickListener {
+                onArticleClick?.invoke(article)
+            }
+        }
+    }
 
     private val diffUtil = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -37,19 +56,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        with(holder) {
-            with(news[position]) {
-                with(binding) {
-                    imageView.load(urlToImage) {
-                        crossfade(600)
-                        error(R.drawable.ic_error_placeholder)
-                    }
-                    tvNewsName.text = title
-                    tvAuthor.text = author
-                    tvPublishedAt.text = publishedAt
-                }
-            }
-        }
+        holder.bind(news[position], onArticleClick)
     }
 
     override fun getItemCount() = news.size
