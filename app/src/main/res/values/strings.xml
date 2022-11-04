@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">FinancialInformationProject</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Home Screen -->
+    <string name="news_name">News Name</string>
+    <string name="news_image">News image</string>
+    <string name="fake_date" translatable="false">2022-08-18T10:19:00Z</string>
+    <string name="fake_author" translatable="false">Kathleen Magramo, CNN</string>
+    <string name="fake_news_title" translatable="false">Dow Jones Futures: Market Rally Retreats, BBBY Stock Dives On This; Time To Bite Into Apple Stock? | Investor\'s Business Daily - Investor\'s Business Daily</string>
+    <string name="fake_category" translatable="false">entertainment</string>
 </resources>
