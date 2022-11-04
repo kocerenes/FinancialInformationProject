@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.FragmentHomeBinding
 import com.ekheek.financialinformationproject.presentation.home.adapter.NewsAdapter
 import com.ekheek.financialinformationproject.util.DataState
@@ -22,7 +24,7 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
 
-    private val newsAdapter by lazy { NewsAdapter() }
+    private val newsAdapter by lazy { NewsAdapter(::onArticleCLick) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,5 +66,10 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun onArticleCLick(article: Article) {
+        val action = HomeFragmentDirections.actionHomeFragmentToNewsDetailFragment(article)
+        findNavController().navigate(action)
     }
 }
