@@ -62,7 +62,8 @@ class HomeFragment : Fragment() {
     private fun onCategoryClick() = binding.rvCategories.apply {
         categoryAdapter = CategoryAdapter(object : ItemClickListener {
             override fun onItemClick(category: String) {
-                requestApi(category)
+                homeViewModel.category = category
+                requestApi()
             }
         })
         setupCategoryRecyclerView()
@@ -73,8 +74,8 @@ class HomeFragment : Fragment() {
         binding.rvNews.layoutManager = LinearLayoutManager(requireContext())
     }
 
-    private fun requestApi(category: String? = null) {
-        homeViewModel.getNews(category)
+    private fun requestApi() {
+        homeViewModel.getNews()
         lifecycleScope.launch {
             homeViewModel.news.collect {
                 when (it) {
@@ -94,6 +95,7 @@ class HomeFragment : Fragment() {
                     is DataState.Empty -> {}
                 }
             }
+
         }
     }
 

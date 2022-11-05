@@ -23,37 +23,22 @@ class HomeViewModel @Inject constructor(
     val news: StateFlow<DataState<ArticleResponse?>>
         get() = _news
 
-    fun getNews(category: String?) {
-        if (category.isNullOrEmpty()) {
-            getNewsUseCase(category = "business")
-                .onEach { resource ->
-                    when (resource) {
-                        is Resource.Loading -> {
-                            _news.value = DataState.Loading
-                        }
-                        is Resource.Success -> {
-                            _news.value = DataState.Success(resource.data)
-                        }
-                        is Resource.Error -> {
-                            _news.value = DataState.Failure(resource.message)
-                        }
+    var category: String = "business"
+
+    fun getNews() {
+        getNewsUseCase(category = category)
+            .onEach { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        _news.value = DataState.Loading
                     }
-                }.launchIn(viewModelScope)
-        } else {
-            getNewsUseCase(category = category)
-                .onEach { resource ->
-                    when (resource) {
-                        is Resource.Loading -> {
-                            _news.value = DataState.Loading
-                        }
-                        is Resource.Success -> {
-                            _news.value = DataState.Success(resource.data)
-                        }
-                        is Resource.Error -> {
-                            _news.value = DataState.Failure(resource.message)
-                        }
+                    is Resource.Success -> {
+                        _news.value = DataState.Success(resource.data)
                     }
-                }.launchIn(viewModelScope)
-        }
+                    is Resource.Error -> {
+                        _news.value = DataState.Failure(resource.message)
+                    }
+                }
+            }.launchIn(viewModelScope)
     }
 }
