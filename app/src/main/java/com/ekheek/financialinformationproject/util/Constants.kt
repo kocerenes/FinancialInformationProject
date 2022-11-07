@@ -10,5 +10,6 @@ object Constants {
     const val NEWS_COUNTRY_CODE = "tr"
 
     //Favorites Article
+    const val DATABASE_NAME = "news_database"
     const val FAVORITES_ARTICLE_TABLE = "favorites_article_table"
 }
