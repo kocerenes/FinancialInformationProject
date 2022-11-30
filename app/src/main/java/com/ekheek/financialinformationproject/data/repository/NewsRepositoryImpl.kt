@@ -14,4 +14,10 @@ class NewsRepositoryImpl @Inject constructor(
     ): ArticleResponse {
         return newsApi.getNews(category = category)
     }
+
+    override suspend fun searchNews(
+        q: String
+    ): ArticleResponse {
+        return newsApi.searchNews(q)
+    }
 }
