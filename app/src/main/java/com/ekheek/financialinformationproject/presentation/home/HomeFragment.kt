@@ -1,9 +1,8 @@
 package com.ekheek.financialinformationproject.presentation.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -41,7 +40,46 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
         requestApi()
         onCategoryClick()
+        setupSearchView()
         return binding.root
+    }
+
+    private fun setupSearchView() = binding.searchView.setOnQueryTextListener(object :
+        SearchView.OnQueryTextListener {
+        override fun onQueryTextSubmit(query: String?): Boolean {
+            if (query != null) {
+                searchNews(query)
+            }
+            return false
+        }
+
+        override fun onQueryTextChange(newText: String?): Boolean {
+            return false
+        }
+    })
+
+    private fun searchNews(searchText: String) {
+        homeViewModel.searchNews(searchText)
+        lifecycleScope.launch {
+            homeViewModel.news.collect {
+                when (it) {
+                    is DataState.Loading -> {
+                        binding.pbNews.visibility = View.VISIBLE
+                    }
+                    is DataState.Success -> {
+                        binding.tvError.visibility = View.INVISIBLE
+                        binding.pbNews.visibility = View.INVISIBLE
+                        newsAdapter.news = it.data!!.articles
+                    }
+                    is DataState.Failure -> {
+                        binding.pbNews.visibility = View.INVISIBLE
+                        binding.tvError.text = it.error
+                        binding.tvError.visibility = View.VISIBLE
+                    }
+                    is DataState.Empty -> {}
+                }
+            }
+        }
     }
 
     private fun createCategoryList() {
