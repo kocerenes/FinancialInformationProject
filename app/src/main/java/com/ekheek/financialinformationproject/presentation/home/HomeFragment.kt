@@ -58,31 +58,28 @@ class HomeFragment : Fragment() {
         }
     })
 
-    private fun collectNews() = lifecycleScope.launch {
-        homeViewModel.news.collect {
-            when (it) {
-                is DataState.Loading -> {
-                    binding.pbNews.visibility = View.VISIBLE
-                }
-                is DataState.Success -> {
-                    binding.tvError.visibility = View.INVISIBLE
-                    binding.pbNews.visibility = View.INVISIBLE
-                    newsAdapter.news = it.data!!.articles
-                }
-                is DataState.Failure -> {
-                    binding.pbNews.visibility = View.INVISIBLE
-                    binding.tvError.text = it.error
-                    binding.tvError.visibility = View.VISIBLE
-                }
-                is DataState.Empty -> {}
-            }
-        }
-    }
-
-
     private fun searchNews(q: String) {
         homeViewModel.searchNews(q)
-        collectNews()
+        lifecycleScope.launch {
+            homeViewModel.news.collect {
+                when (it) {
+                    is DataState.Loading -> {
+                        binding.pbNews.visibility = View.VISIBLE
+                    }
+                    is DataState.Success -> {
+                        binding.tvError.visibility = View.INVISIBLE
+                        binding.pbNews.visibility = View.INVISIBLE
+                        newsAdapter.news = it.data!!.articles
+                    }
+                    is DataState.Failure -> {
+                        binding.pbNews.visibility = View.INVISIBLE
+                        binding.tvError.text = it.error
+                        binding.tvError.visibility = View.VISIBLE
+                    }
+                    is DataState.Empty -> {}
+                }
+            }
+        }
     }
 
     private fun createCategoryList() {
@@ -117,7 +114,26 @@ class HomeFragment : Fragment() {
 
     private fun requestApi() {
         homeViewModel.getNews()
-        collectNews()
+        lifecycleScope.launch {
+            homeViewModel.news.collect {
+                when (it) {
+                    is DataState.Loading -> {
+                        binding.pbNews.visibility = View.VISIBLE
+                    }
+                    is DataState.Success -> {
+                        binding.tvError.visibility = View.INVISIBLE
+                        binding.pbNews.visibility = View.INVISIBLE
+                        newsAdapter.news = it.data!!.articles
+                    }
+                    is DataState.Failure -> {
+                        binding.pbNews.visibility = View.INVISIBLE
+                        binding.tvError.text = it.error
+                        binding.tvError.visibility = View.VISIBLE
+                    }
+                    is DataState.Empty -> {}
+                }
+            }
+        }
     }
 
     private fun onArticleCLick(article: Article) {
