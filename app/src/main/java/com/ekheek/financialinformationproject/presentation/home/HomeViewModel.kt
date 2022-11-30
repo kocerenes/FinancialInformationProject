@@ -42,39 +42,23 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             }.launchIn(viewModelScope)
-        var category: String = "business"
+    }
 
-        fun getNews() {
-            getNewsUseCase(category = category)
-                .onEach { resource ->
-                    when (resource) {
-                        is Resource.Loading -> {
-                            _news.value = DataState.Loading
-                        }
-                        is Resource.Success -> {
-                            _news.value = DataState.Success(resource.data)
-                        }
-                        is Resource.Error -> {
-                            _news.value = DataState.Failure(resource.message)
-                        }
+    fun searchNews(q: String) {
+        searchNewsUseCase(q = q)
+            .onEach { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        _news.value = DataState.Loading
                     }
-                }.launchIn(viewModelScope)
-        }
+                    is Resource.Success -> {
+                        _news.value = DataState.Success(resource.data)
+                    }
+                    is Resource.Error -> {
+                        _news.value = DataState.Failure(resource.message)
+                    }
+                }
+            }.launchIn(viewModelScope)
+    }
 
-        fun searchNews(q: String) {
-            searchNewsUseCase(q = q)
-                .onEach { resource ->
-                    when (resource) {
-                        is Resource.Loading -> {
-                            _news.value = DataState.Loading
-                        }
-                        is Resource.Success -> {
-                            _news.value = DataState.Success(resource.data)
-                        }
-                        is Resource.Error -> {
-                            _news.value = DataState.Failure(resource.message)
-                        }
-                    }
-                }.launchIn(viewModelScope)
-        }
 }
