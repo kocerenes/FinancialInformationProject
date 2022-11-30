@@ -25,8 +25,10 @@ class HomeViewModel @Inject constructor(
     val news: StateFlow<DataState<ArticleResponse?>>
         get() = _news
 
-    fun searchNews(q: String) {
-        searchNewsUseCase(q = q)
+    var category: String = "business"
+
+    fun getNews() {
+        getNewsUseCase(category = category)
             .onEach { resource ->
                 when (resource) {
                     is Resource.Loading -> {
@@ -42,10 +44,8 @@ class HomeViewModel @Inject constructor(
             }.launchIn(viewModelScope)
     }
 
-    var category: String = "business"
-
-    fun getNews() {
-        getNewsUseCase(category = category)
+    fun searchNews(q: String) {
+        searchNewsUseCase(q = q)
             .onEach { resource ->
                 when (resource) {
                     is Resource.Loading -> {
