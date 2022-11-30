@@ -44,8 +44,8 @@ class HomeViewModel @Inject constructor(
             }.launchIn(viewModelScope)
     }
 
-    fun searchNews(q: String) {
-        searchNewsUseCase(q = q)
+    fun searchNews(searchText: String) {
+        searchNewsUseCase(q = searchText)
             .onEach { resource ->
                 when (resource) {
                     is Resource.Loading -> {

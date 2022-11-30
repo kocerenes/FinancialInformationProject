@@ -58,8 +58,8 @@ class HomeFragment : Fragment() {
         }
     })
 
-    private fun searchNews(q: String) {
-        homeViewModel.searchNews(q)
+    private fun searchNews(searchText: String) {
+        homeViewModel.searchNews(searchText)
         lifecycleScope.launch {
             homeViewModel.news.collect {
                 when (it) {
