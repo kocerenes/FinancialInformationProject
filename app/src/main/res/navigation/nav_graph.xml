@@ -21,5 +21,17 @@
         <argument
             android:name="article"
             app:argType="com.ekheek.financialinformationproject.data.remote.model.Article" />
+        <action
+            android:id="@+id/action_newsDetailFragment_to_newsWebViewFragment"
+            app:destination="@id/newsWebViewFragment" />
     </dialog>
+    <fragment
+        android:id="@+id/newsWebViewFragment"
+        android:name="com.ekheek.financialinformationproject.presentation.webivew.NewsWebViewFragment"
+        android:label="fragment_news_web_view"
+        tools:layout="@layout/fragment_news_web_view" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
 </navigation>

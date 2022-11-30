@@ -133,6 +133,7 @@ class HomeFragment : Fragment() {
                     is DataState.Empty -> {}
                 }
             }
+
         }
     }
 
