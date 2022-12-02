@@ -2,22 +2,34 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="com.ekheek.financialinformationproject.presentation.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_newsDetailFragment"
             app:destination="@id/newsDetailFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.ekheek.financialinformationproject.presentation.favorite.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+
     <dialog
         android:id="@+id/newsDetailFragment"
         android:name="com.ekheek.financialinformationproject.presentation.detail.NewsDetailFragment"
         android:label="fragment_news_detail"
-        tools:layout="@layout/fragment_news_detail" >
+        tools:layout="@layout/fragment_news_detail">
         <argument
             android:name="article"
             app:argType="com.ekheek.financialinformationproject.data.remote.model.Article" />
@@ -25,11 +37,12 @@
             android:id="@+id/action_newsDetailFragment_to_newsWebViewFragment"
             app:destination="@id/newsWebViewFragment" />
     </dialog>
+
     <fragment
         android:id="@+id/newsWebViewFragment"
         android:name="com.ekheek.financialinformationproject.presentation.webivew.NewsWebViewFragment"
         android:label="fragment_news_web_view"
-        tools:layout="@layout/fragment_news_web_view" >
+        tools:layout="@layout/fragment_news_web_view">
         <argument
             android:name="url"
             app:argType="string" />
