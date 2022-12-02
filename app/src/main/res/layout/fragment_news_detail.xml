@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".presentation.detail.NewsDetailFragment">
 
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -99,7 +98,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/favoriteIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_baseline_star_outline_24"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewAuthor"
+            app:layout_constraintStart_toEndOf="@+id/textViewAuthor"
+            app:layout_constraintTop_toTopOf="@+id/textViewAuthor"
+            android:contentDescription="@string/details_content_description"/>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

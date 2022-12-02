@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.ekheek.financialinformationproject.R
+import com.ekheek.financialinformationproject.data.local.entity.FavoriteEntity
 import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.FragmentNewsDetailBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -23,12 +25,13 @@ class NewsDetailFragment : BottomSheetDialogFragment() {
     private val binding get() = _binding!!
 
     private val navigationArgs: NewsDetailFragmentArgs by navArgs()
+    private val detailViewModel: NewsDetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentNewsDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,6 +40,7 @@ class NewsDetailFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         bindUI(getArticle())
         onClickSeeDetailsTextView()
+        clickFavoriteButton()
     }
 
     private fun onClickSeeDetailsTextView() = binding.textViewGoToWebView.setOnClickListener {
@@ -51,6 +55,7 @@ class NewsDetailFragment : BottomSheetDialogFragment() {
     private fun getArticle() = navigationArgs.article
 
     private fun bindUI(article: Article) = binding.apply {
+        isFav()
         textViewAuthor.text = article.author
         textViewContent.text = article.content
         textViewTitle.text = article.title
@@ -65,5 +70,26 @@ class NewsDetailFragment : BottomSheetDialogFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun isFav() {
+        detailViewModel.isFav(getArticle())
+        detailViewModel.favLiveData.observe(viewLifecycleOwner) {
+            if (detailViewModel.favLiveData.value == true) {
+                binding.favoriteIcon.setBackgroundResource(R.drawable.ic_star_24)
+            } else {
+                binding.favoriteIcon.setBackgroundResource(R.drawable.ic_baseline_star_outline_24)
+            }
+        }
+    }
+
+    private fun clickFavoriteButton() = binding.favoriteIcon.setOnClickListener {
+        if (detailViewModel.favLiveData.value == true) {
+            detailViewModel.favLiveData.value = false
+            detailViewModel.deleteFavoriteNews(getArticle())
+        } else {
+            detailViewModel.favLiveData.value = true
+            detailViewModel.addFavoriteNews(FavoriteEntity(article = getArticle(), id = 0))
+        }
     }
 }
