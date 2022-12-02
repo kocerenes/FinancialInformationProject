@@ -1,10 +1,10 @@
 package com.ekheek.financialinformationproject.presentation.favorite
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,7 +36,13 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun observeFavoriteNews() = favoriteViewModel.favoriteNews.observe(viewLifecycleOwner) {
-        favoriteAdapter.news = it
+        if (it.isNullOrEmpty()) {
+            binding.rvNews.visibility = View.GONE
+            binding.ivNoData.visibility = View.VISIBLE
+            binding.tvNoData.visibility = View.VISIBLE
+        } else {
+            favoriteAdapter.news = it
+        }
     }
 
     private fun setupRecyclerView() {
