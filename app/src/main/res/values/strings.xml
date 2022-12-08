@@ -9,4 +9,11 @@
     <string name="fake_author" translatable="false">Kathleen Magramo, CNN</string>
     <string name="fake_news_title" translatable="false">Dow Jones Futures: Market Rally Retreats, BBBY Stock Dives On This; Time To Bite Into Apple Stock? | Investor\'s Business Daily - Investor\'s Business Daily</string>
     <string name="fake_category" translatable="false">entertainment</string>
+    <string name="example_author">fanatik</string>
+    <string name="title_home">Home</string>
+
+    <!-- Favorite Screen -->
+    <string name="title_favorite">Favorite</string>
+    <string name="details_content_description">Favorite icon</string>
+    <string name="you_have_no_favorite_news">You have no favorite news</string>
 </resources>

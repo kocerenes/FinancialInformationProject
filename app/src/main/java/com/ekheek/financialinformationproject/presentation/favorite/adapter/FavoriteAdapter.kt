@@ -1,4 +1,4 @@
-package com.ekheek.financialinformationproject.presentation.home.adapter
+package com.ekheek.financialinformationproject.presentation.favorite.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,14 +7,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.ekheek.financialinformationproject.R
+import com.ekheek.financialinformationproject.data.local.entity.FavoriteEntity
 import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.ItemNewsBinding
 
-class NewsAdapter(
+class FavoriteAdapter(
     private val onArticleClick: ((article: Article) -> Unit)?
-) : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
+) : RecyclerView.Adapter<FavoriteAdapter.MyViewHolder>() {
 
-    class MyViewHolder(private val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(private val binding: ItemNewsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(
             article: Article,
             onArticleClick: ((article: Article) -> Unit)?
@@ -33,19 +35,19 @@ class NewsAdapter(
         }
     }
 
-    private val diffUtil = object : DiffUtil.ItemCallback<Article>() {
-        override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
+    private val diffUtil = object : DiffUtil.ItemCallback<FavoriteEntity>() {
+        override fun areItemsTheSame(oldItem: FavoriteEntity, newItem: FavoriteEntity): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
+        override fun areContentsTheSame(oldItem: FavoriteEntity, newItem: FavoriteEntity): Boolean {
             return oldItem == newItem
         }
     }
 
     private val diffList = AsyncListDiffer(this, diffUtil)
 
-    var news: List<Article>
+    var news: List<FavoriteEntity>
         get() = diffList.currentList
         set(value) = diffList.submitList(value)
 
@@ -56,7 +58,7 @@ class NewsAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(news[position], onArticleClick)
+        holder.bind(news[position].article, onArticleClick)
     }
 
     override fun getItemCount() = news.size
