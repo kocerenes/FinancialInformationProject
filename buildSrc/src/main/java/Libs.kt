@@ -58,4 +58,8 @@ object Libs {
         const val testExt = "androidx.test.ext:junit:" + Versions.testExt
         const val espresso = "androidx.test.espresso:espresso-core:" + Versions.espresso
     }
+
+    object View {
+        const val lottie = "com.airbnb.android:lottie:" + Versions.lottie
+    }
 }
