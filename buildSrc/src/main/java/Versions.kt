@@ -22,4 +22,6 @@ object Versions {
     const val glide = "4.14.2"
     const val coil = "1.4.0"
     const val lottie = "3.4.0"
+    const val firebase_auth = "21.1.0"
+    const val google_services = "4.3.14"
 }
