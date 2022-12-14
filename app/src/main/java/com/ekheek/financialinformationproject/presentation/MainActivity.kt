@@ -1,6 +1,7 @@
 package com.ekheek.financialinformationproject.presentation
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -30,6 +31,17 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_favorite
             )
         )
+
+        // no bottom nagitaion screens
+        val noBottomNavigationIds = listOf(R.id.navigation_splash)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (noBottomNavigationIds.contains(destination.id)) {
+                navView.visibility = View.GONE
+            } else {
+                navView.visibility = View.VISIBLE
+            }
+        }
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
