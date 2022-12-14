@@ -85,4 +85,7 @@ dependencies {
     // Glide
     implementation Libs.Image.glide
     annotationProcessor Libs.Image.compiler
+
+    // Lottie
+    implementation Libs.View.lottie
 }

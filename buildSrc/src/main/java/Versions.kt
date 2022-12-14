@@ -21,4 +21,5 @@ object Versions {
     const val ok_http = "4.7.2"
     const val glide = "4.14.2"
     const val coil = "1.4.0"
+    const val lottie = "3.4.0"
 }
