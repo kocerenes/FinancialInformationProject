@@ -15,7 +15,11 @@
             app:destination="@id/newsDetailFragment" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_login"
-            app:destination="@id/navigation_login" />
+            app:destination="@id/navigation_login"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
 
     <fragment
@@ -38,7 +42,11 @@
             app:argType="com.ekheek.financialinformationproject.data.remote.model.Article" />
         <action
             android:id="@+id/action_newsDetailFragment_to_newsWebViewFragment"
-            app:destination="@id/newsWebViewFragment" />
+            app:destination="@id/newsWebViewFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </dialog>
 
     <fragment
@@ -66,10 +74,16 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/navigation_register" />
+            app:destination="@id/navigation_register"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_loginFragment_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/navigation_register"
@@ -78,7 +92,11 @@
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/navigation_login" />
+            app:destination="@id/navigation_login"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_registerFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
