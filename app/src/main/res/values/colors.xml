@@ -9,4 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bodyTextColor">#4C4C4C</color>
     <color name="essential_color">#4999DA</color>
+
+    <color name="celestial_start">#c33764</color>
+    <color name="celestial_end">#1d2671</color>
+    <color name="endless_river_start">#43cea2</color>
+    <color name="endless_river_end">#185a9d</color>
+    <color name="frost_start">#000428</color>
+    <color name="frost_end">#004e92</color>
+    <color name="white_light">#ccffffff</color>
 </resources>
