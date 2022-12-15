@@ -11,9 +11,26 @@
     <string name="fake_category" translatable="false">entertainment</string>
     <string name="example_author">fanatik</string>
     <string name="title_home">Home</string>
+    <string name="log_out_question">Are you want to sign out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logged_out_successfully">Logged Out Successfully!</string>
 
     <!-- Favorite Screen -->
     <string name="title_favorite">Favorite</string>
     <string name="details_content_description">Favorite icon</string>
     <string name="you_have_no_favorite_news">You have no favorite news</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="login_now">Login Now</string>
+    <string name="or">or</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="logo">logo</string>
+    <string name="you_have_an_account">You have an account?</string>
+    <string name="sign_up_with_google">Sign Up With Google</string>
+    <string name="register_now">Register Now</string>
+    <string name="log_out">Log Out</string>
+    <string name="you_don_t_have_an_account">You don\'t have an account?</string>
+    <string name="login">Login</string>
 </resources>

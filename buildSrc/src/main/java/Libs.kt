@@ -25,6 +25,8 @@ object Libs {
 
     object Google {
         const val material = "com.google.android.material:material:" + Versions.material
+        const val firebase_auth = "com.google.firebase:firebase-auth-ktx:" + Versions.firebase_auth
+        const val google_services = "com.google.gms:google-services:" + Versions.google_services
     }
 
     object Hilt {

@@ -2,18 +2,24 @@ package com.ekheek.financialinformationproject.presentation.home
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.FragmentHomeBinding
 import com.ekheek.financialinformationproject.presentation.home.adapter.CategoryAdapter
 import com.ekheek.financialinformationproject.presentation.home.adapter.ItemClickListener
 import com.ekheek.financialinformationproject.presentation.home.adapter.NewsAdapter
 import com.ekheek.financialinformationproject.util.DataState
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -30,6 +36,8 @@ class HomeFragment : Fragment() {
     private lateinit var categoryAdapter: CategoryAdapter
     private var categoryList = mutableListOf<String>()
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,7 +49,27 @@ class HomeFragment : Fragment() {
         requestApi()
         onCategoryClick()
         setupSearchView()
+        auth = Firebase.auth // initialize Firebase auth
+        onLogOutIconClick()
         return binding.root
+    }
+
+    private fun onLogOutIconClick() = binding.ivLogOut.setOnClickListener {
+        showAlertDialog()
+    }
+
+    // Confirm deletion alert dialog
+    private fun showAlertDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setMessage(R.string.log_out_question)
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                auth.signOut()
+                Toast.makeText(requireContext(), R.string.logged_out_successfully, Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_navigation_home_to_navigation_login)
+            }.setNegativeButton(getString(R.string.no)) { _, _ ->
+
+            }
+            .show()
     }
 
     private fun setupSearchView() = binding.searchView.setOnQueryTextListener(object :

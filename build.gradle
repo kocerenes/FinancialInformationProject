@@ -4,6 +4,7 @@ buildscript {
     dependencies {
         classpath Libs.Hilt.plugin
         classpath Libs.AndroidX.safeArgs
+        classpath Libs.Google.google_services
     }
 }
 
