@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        // no bottom nagitaion screens
-        val noBottomNavigationIds = listOf(R.id.navigation_splash)
+        // no bottom navigation screens
+        val noBottomNavigationIds = listOf(R.id.navigation_splash,R.id.navigation_login,R.id.navigation_register)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (noBottomNavigationIds.contains(destination.id)) {
                 navView.visibility = View.GONE
