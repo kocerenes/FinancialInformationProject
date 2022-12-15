@@ -39,6 +39,22 @@ class LoginFragment : Fragment() {
         initAuth()
         goToRegisterPage()
         onClickLoginButton()
+        navigateToHomeFragment()
+    }
+
+    private fun getCurrentAuth() = auth.currentUser
+
+    // check if the user already sign in
+    private fun isUserLoggedIn(): Boolean {
+        return getCurrentAuth() != null
+    }
+
+    // if the user signed in, navigate directly to home
+    private fun navigateToHomeFragment() {
+        if (isUserLoggedIn()) {
+            val action = LoginFragmentDirections.actionLoginFragmentToNavigationHome()
+            findNavController().navigate(action)
+        }
     }
 
     private fun initAuth() {

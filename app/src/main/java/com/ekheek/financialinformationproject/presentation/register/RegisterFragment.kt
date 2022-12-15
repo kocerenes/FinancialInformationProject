@@ -39,6 +39,20 @@ class RegisterFragment : Fragment() {
         initAuth()
         goToLoginPage()
         onClickRegisterButton()
+        navigateToHomeFragment()
+    }
+
+    private fun getCurrentAuth() = auth.currentUser
+
+    private fun isUserLoggedIn(): Boolean {
+        return getCurrentAuth() != null
+    }
+
+    private fun navigateToHomeFragment() {
+        if (isUserLoggedIn()) {
+            val action = RegisterFragmentDirections.actionRegisterFragmentToNavigationHome()
+            findNavController().navigate(action)
+        }
     }
 
     private fun initAuth() {
@@ -65,7 +79,11 @@ class RegisterFragment : Fragment() {
             auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
                 val action = RegisterFragmentDirections.actionRegisterFragmentToNavigationHome()
                 Navigation.findNavController(view).navigate(action)
-                Toast.makeText(requireContext(), "Account created successfully!", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    requireContext(),
+                    "Account created successfully!",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
             }.addOnFailureListener { exception ->
                 Toast.makeText(requireContext(), exception.localizedMessage, Toast.LENGTH_SHORT)
