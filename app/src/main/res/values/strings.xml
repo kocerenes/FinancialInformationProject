@@ -11,6 +11,10 @@
     <string name="fake_category" translatable="false">entertainment</string>
     <string name="example_author">fanatik</string>
     <string name="title_home">Home</string>
+    <string name="log_out_question">Are you want to sign out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logged_out_successfully">Logged Out Successfully!</string>
 
     <!-- Favorite Screen -->
     <string name="title_favorite">Favorite</string>
