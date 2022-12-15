@@ -4,24 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
+    android:background="@color/essential_color"
+    android:padding="16dp"
     tools:context=".presentation.register.RegisterFragment">
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_left_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="24dp" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_right_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="24dp" />
 
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -32,134 +17,65 @@
         android:background="@drawable/logo_bg"
         android:contentDescription="@string/logo"
         android:src="@drawable/ic_baseline_newspaper_24"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right_register"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/etEmailRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/et_bg"
-        android:drawableEnd="@drawable/ic_baseline_email_24"
-        android:drawableTint="@color/white_light"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
-        android:padding="16dp"
-        android:textColor="@color/white_light"
-        android:textColorHint="@color/white_light"
-        app:layout_constraintEnd_toStartOf="@id/guideline_right_register"
-        app:layout_constraintStart_toStartOf="@id/guideline_left_register"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        tools:ignore="DuplicateClickableBoundsCheck" />
-
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_rounded"
+        android:drawableTint="@color/white"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textPersonName"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
         android:id="@+id/etPasswordRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/et_bg"
-        android:drawableEnd="@drawable/ic_baseline_eye_24"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_rounded"
         android:drawableTint="@color/white_light"
-        android:hint="@string/password"
+        android:ems="10"
+        android:hint="password"
         android:inputType="textPassword"
-        android:padding="16dp"
-        android:textColor="@color/white_light"
-        android:textColorHint="@color/white_light"
-        app:layout_constraintEnd_toStartOf="@id/guideline_right_register"
-        app:layout_constraintStart_toStartOf="@id/guideline_left_register"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmailRegister" />
-
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_bg"
-        android:text="@string/register_now"
+        android:layout_marginTop="24dp"
         android:textAllCaps="false"
-        android:textColor="@color/white_light"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right_register"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left_register"
+        android:background="@drawable/bg_rounded"
+        android:drawableTint="@color/white_light"
+        android:text="@string/register_now"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister" />
-
-
-    <View
-        android:id="@+id/line1"
-        android:layout_width="120dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/white_light"
-        app:layout_constraintBottom_toTopOf="@+id/google_register"
-        app:layout_constraintEnd_toStartOf="@+id/or"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="@id/guideline_left_register"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
-
-
-    <TextView
-        android:id="@+id/or"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/or"
-        android:textColor="@color/white_light"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/line1"
-        app:layout_constraintEnd_toStartOf="@+id/line2"
-        app:layout_constraintStart_toEndOf="@+id/line1"
-        app:layout_constraintTop_toTopOf="@+id/line1" />
-
-
-    <View
-        android:id="@+id/line2"
-        android:layout_width="120dp"
-        android:layout_height="1dp"
-        android:background="@color/white_light"
-        app:layout_constraintBottom_toBottomOf="@+id/or"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right_register"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@+id/or"
-        app:layout_constraintTop_toTopOf="@+id/or" />
-
-
-    <TextView
-        android:id="@+id/google_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:padding="8dp"
-        android:text="@string/sign_up_with_google"
-        android:textColor="@color/white_light"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/footer_line"
-        app:layout_constraintEnd_toStartOf="@id/guideline_right_register"
-        app:layout_constraintStart_toStartOf="@id/guideline_left_register" />
-
-    <View
-        android:id="@+id/footer_line"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginBottom="50dp"
-        android:background="@color/white_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints" />
-
 
     <TextView
         android:id="@+id/tvGoToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textStyle="bold"
+        android:layout_marginEnd="32dp"
         android:text="@string/you_have_an_account"
         android:textColor="@color/white_light"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/footer_line" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

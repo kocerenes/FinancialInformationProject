@@ -26,4 +26,7 @@
     <string name="you_have_an_account">You have an account?</string>
     <string name="sign_up_with_google">Sign Up With Google</string>
     <string name="register_now">Register Now</string>
+    <string name="log_out">Log Out</string>
+    <string name="you_don_t_have_an_account">You don\'t have an account?</string>
+    <string name="login">Login</string>
 </resources>
