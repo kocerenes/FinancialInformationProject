@@ -28,14 +28,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_rounded"
-        android:drawableTint="@color/white"
+        android:drawableStart="@drawable/ic_user"
+        android:drawablePadding="4dp"
         android:ems="10"
-        android:hint="email"
+        android:hint="@string/enter_email"
         android:inputType="textPersonName"
         android:padding="20dp"
+        android:textColor="@color/white_light"
+        android:textColorHint="@color/white_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/etPasswordRegister"
@@ -43,11 +46,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_rounded"
-        android:drawableTint="@color/white_light"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="4dp"
         android:ems="10"
-        android:hint="password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:padding="20dp"
+        android:textColor="@color/white_light"
+        android:textColorHint="@color/white_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,11 +64,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:textAllCaps="false"
         android:background="@drawable/bg_rounded"
         android:drawableTint="@color/white_light"
         android:text="@string/register_now"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="@color/frost_start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister" />
 
@@ -71,11 +78,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:textStyle="bold"
         android:layout_marginEnd="32dp"
         android:text="@string/you_have_an_account"
         android:textColor="@color/white_light"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

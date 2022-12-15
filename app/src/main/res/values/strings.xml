@@ -33,4 +33,7 @@
     <string name="log_out">Log Out</string>
     <string name="you_don_t_have_an_account">You don\'t have an account?</string>
     <string name="login">Login</string>
+    <string name="sign_in">Sign In</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
 </resources>
