@@ -80,14 +80,14 @@ class NewsDetailFragment : Fragment() {
         detailViewModel.isFav(getArticle())
         detailViewModel.favLiveData.observe(viewLifecycleOwner) {
             if (detailViewModel.favLiveData.value == true) {
-                binding.favoriteIcon.setBackgroundResource(R.drawable.ic_star_24)
+                binding.imageButtonFav.setBackgroundResource(R.drawable.ic_bookmark_added)
             } else {
-                binding.favoriteIcon.setBackgroundResource(R.drawable.ic_baseline_star_outline_24)
+                binding.imageButtonFav.setBackgroundResource(R.drawable.ic_bookmark_outlined)
             }
         }
     }
 
-    private fun clickFavoriteButton() = binding.favoriteIcon.setOnClickListener {
+    private fun clickFavoriteButton() = binding.imageButtonFav.setOnClickListener {
         if (detailViewModel.favLiveData.value == true) {
             detailViewModel.favLiveData.value = false
             detailViewModel.deleteFavoriteNews(getArticle())

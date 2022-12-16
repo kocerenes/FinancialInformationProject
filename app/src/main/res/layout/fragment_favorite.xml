@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/favorite_news"
+        app:title="@string/read_later"
         app:titleTextColor="@color/essential_color" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -39,6 +39,7 @@
         android:layout_height="120dp"
         android:src="@drawable/ic_sad_face_24"
         android:visibility="gone"
+        android:contentDescription="@string/no_data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
