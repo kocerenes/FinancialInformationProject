@@ -58,6 +58,9 @@ class NewsDetailFragment : Fragment() {
     private fun bindUI(article: Article) = binding.apply {
         isFav()
         textViewAuthor.text = article.author
+        if (article.author == null) {
+            textViewAuthor.text = article.source?.name
+        }
         textViewContent.text = article.content
         textViewTitle.text = article.title
         textViewDescription.text = article.description
@@ -88,10 +91,18 @@ class NewsDetailFragment : Fragment() {
         if (detailViewModel.favLiveData.value == true) {
             detailViewModel.favLiveData.value = false
             detailViewModel.deleteFavoriteNews(getArticle())
-            Toast.makeText(requireContext(),getString(R.string.removed_from_favorite),Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.removed_from_favorite),
+                Toast.LENGTH_SHORT
+            ).show()
         } else {
             detailViewModel.favLiveData.value = true
-            Toast.makeText(requireContext(),getString(R.string.added_to_favorite),Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.added_to_favorite),
+                Toast.LENGTH_SHORT
+            ).show()
             detailViewModel.addFavoriteNews(FavoriteEntity(article = getArticle(), id = 0))
         }
     }

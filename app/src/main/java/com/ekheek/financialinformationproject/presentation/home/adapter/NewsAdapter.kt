@@ -24,7 +24,7 @@ class NewsAdapter(
                 error(R.drawable.ic_error_placeholder)
             }
             tvNewsName.text = article.title
-            tvAuthor.text = article.author
+            tvAuthor.text = article.source?.name
             tvPublishedAt.text = article.publishedAt
 
             root.setOnClickListener {
