@@ -65,7 +65,9 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_navigation_splash_to_navigation_login"
-            app:destination="@id/navigation_login" />
+            app:destination="@id/navigation_login"
+            app:popUpTo="@id/navigation_splash"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/navigation_login"
@@ -83,7 +85,9 @@
             android:id="@+id/action_loginFragment_to_navigation_home"
             app:destination="@id/navigation_home"
             app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left" />
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/navigation_login"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/navigation_register"
@@ -99,6 +103,8 @@
             app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_registerFragment_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_register"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
