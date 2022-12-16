@@ -8,19 +8,38 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.ekheek.financialinformationproject.R
+import com.ekheek.financialinformationproject.databinding.FragmentSplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SplashFragment : Fragment() {
+
+    private var _binding: FragmentSplashBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        _binding = FragmentSplashBinding.inflate(inflater, container, false)
+        val view = binding.root
+        getLooper()
+        return view
+    }
+
+    private fun getLooper() {
         Handler(Looper.getMainLooper()).postDelayed({
             val action = SplashFragmentDirections.actionNavigationSplashToNavigationLogin()
             findNavController().navigate(action)
         }, 5000)
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
