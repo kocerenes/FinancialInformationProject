@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_newsDetailFragment"
-            app:destination="@id/newsDetailFragment" />
+            app:destination="@id/newsDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_login"
             app:destination="@id/navigation_login"
@@ -32,7 +36,7 @@
             app:destination="@id/newsDetailFragment" />
     </fragment>
 
-    <dialog
+    <fragment
         android:id="@+id/newsDetailFragment"
         android:name="com.ekheek.financialinformationproject.presentation.detail.NewsDetailFragment"
         android:label="fragment_news_detail"
@@ -47,7 +51,7 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
-    </dialog>
+    </fragment>
 
     <fragment
         android:id="@+id/newsWebViewFragment"
