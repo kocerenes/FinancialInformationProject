@@ -44,5 +44,6 @@
     <string name="logo">logo</string>
     <string name="click_to_see_more">Click to see more…</string>
     <string name="favorite_news">Favorites</string>
+    <string name="remember_me">Remember Me</string>
 
 </resources>

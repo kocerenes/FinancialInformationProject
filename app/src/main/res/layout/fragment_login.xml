@@ -46,13 +46,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/double_extra_large_margin"
+        android:layout_marginTop="26dp"
         android:background="@drawable/bg_rounded"
         android:drawableTint="@color/white_light"
         android:text="@string/login"
@@ -60,7 +61,7 @@
         app:backgroundTint="@color/frost_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/checBoxRememberMe" />
 
     <TextView
         android:id="@+id/tvGoToRegister"
@@ -95,5 +96,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewAppNameLogin" />
+
+    <CheckBox
+        android:id="@+id/checBoxRememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white_light"
+        android:textSize="@dimen/large_size"
+        android:buttonTint="@color/white_light"
+        android:text="@string/remember_me"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
