@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bodyTextColor">#4C4C4C</color>
     <color name="essential_color">#4999DA</color>
+    <color name="star_icon_color">#F1CB2A</color>
 
     <color name="celestial_start">#c33764</color>
     <color name="celestial_end">#1d2671</color>

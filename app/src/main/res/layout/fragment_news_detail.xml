@@ -102,12 +102,12 @@
             android:id="@+id/favoriteIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:contentDescription="@string/details_content_description"
             android:src="@drawable/ic_baseline_star_outline_24"
             app:layout_constraintBottom_toBottomOf="@+id/textViewAuthor"
+            app:layout_constraintEnd_toStartOf="@+id/textViewPublishedAt"
             app:layout_constraintStart_toEndOf="@+id/textViewAuthor"
-            app:layout_constraintTop_toTopOf="@+id/textViewAuthor"
-            android:contentDescription="@string/details_content_description"/>
+            app:layout_constraintTop_toTopOf="@+id/textViewAuthor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
