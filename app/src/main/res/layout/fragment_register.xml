@@ -19,7 +19,7 @@
         android:drawablePadding="@dimen/double_extra_small_padding"
         android:ems="10"
         android:hint="@string/enter_email"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:padding="@dimen/double_extra_large_padding"
         android:textColor="@color/white_light"
         android:textColorHint="@color/white_light"
