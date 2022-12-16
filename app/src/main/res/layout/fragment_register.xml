@@ -9,24 +9,11 @@
     tools:context=".presentation.register.RegisterFragment">
 
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/logo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/logo_bg"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/ic_baseline_newspaper_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/etEmailRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/double_extra_large_margin"
+        android:layout_marginTop="26dp"
         android:background="@drawable/bg_rounded"
         android:drawableStart="@drawable/ic_user"
         android:drawablePadding="@dimen/double_extra_small_padding"
@@ -38,7 +25,7 @@
         android:textColorHint="@color/white_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/viewRegister" />
 
     <EditText
         android:id="@+id/etPasswordRegister"
@@ -68,8 +55,8 @@
         android:drawableTint="@color/white_light"
         android:text="@string/register_now"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
         app:backgroundTint="@color/frost_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister" />
 
@@ -85,18 +72,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/double_extra_large_margin"
-        android:text="@string/sign_in"
-        android:textColor="@color/white"
-        android:textSize="@dimen/triple_extra_large_size"
-        android:textStyle="bold"
+    <View
+        android:id="@+id/viewAppNameRegister"
+        android:layout_width="245dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/app_name_hek_news"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewRegister"
+        android:layout_width="168dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewAppNameRegister" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
