@@ -23,7 +23,9 @@
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
-            app:popExitAnim="@anim/to_left" />
+            app:popExitAnim="@anim/to_left"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
