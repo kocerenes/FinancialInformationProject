@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.FinancialInformationProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.FinancialInformationProject" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/essential_color</item>
         <item name="colorPrimaryVariant">@color/essential_color</item>
