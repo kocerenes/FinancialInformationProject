@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -65,14 +66,14 @@ class LoginFragment : Fragment() {
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
 
-        if (email.equals("") || password.equals("")) {
-            Toast.makeText(requireContext(), "PLease fill out all the fields!", Toast.LENGTH_SHORT)
+        if (email == "" || password == "") {
+            Toast.makeText(requireContext(), getString(R.string.fill_all_fields), Toast.LENGTH_SHORT)
                 .show()
         } else {
             auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                 val action = LoginFragmentDirections.actionLoginFragmentToNavigationHome()
                 Navigation.findNavController(view).navigate(action)
-                Toast.makeText(requireContext(), "Welcome!", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), getString(R.string.welcome), Toast.LENGTH_SHORT)
                     .show()
             }.addOnFailureListener { exception ->
                 Toast.makeText(requireContext(), exception.localizedMessage, Toast.LENGTH_SHORT)

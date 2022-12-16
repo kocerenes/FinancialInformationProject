@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -73,7 +74,11 @@ class RegisterFragment : Fragment() {
         val password = etPasswordRegister.text.toString()
 
         if (email == "" || password == "") {
-            Toast.makeText(requireContext(), "Please fill out all the fields!", Toast.LENGTH_SHORT)
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.fill_all_fields),
+                Toast.LENGTH_SHORT
+            )
                 .show()
         } else {
             auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
@@ -81,7 +86,7 @@ class RegisterFragment : Fragment() {
                 Navigation.findNavController(view).navigate(action)
                 Toast.makeText(
                     requireContext(),
-                    "Account created successfully!",
+                    getString(R.string.account_created),
                     Toast.LENGTH_SHORT
                 )
                     .show()
