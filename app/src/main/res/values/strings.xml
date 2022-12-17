@@ -40,7 +40,7 @@
     <!-- Favorite Screen -->
     <string name="title_favorite">Favorite</string>
     <string name="details_content_description">Favorite icon</string>
-    <string name="you_have_no_favorite_news">You have no favorite news</string>
+    <string name="you_have_no_favorite_news">You have not saved any news</string>
     <string name="logo">logo</string>
     <string name="click_to_see_more">Click to see more…</string>
     <string name="remember_me">Remember Me</string>
