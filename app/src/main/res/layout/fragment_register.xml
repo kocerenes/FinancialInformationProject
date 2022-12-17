@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/essential_color"
+    android:padding="@dimen/large_padding"
+    tools:context=".presentation.register.RegisterFragment">
+
+
+    <EditText
+        android:id="@+id/etEmailRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/bg_rounded"
+        android:drawableStart="@drawable/ic_user"
+        android:drawablePadding="@dimen/double_extra_small_padding"
+        android:ems="10"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/double_extra_large_padding"
+        android:textColor="@color/white_light"
+        android:textColorHint="@color/white_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewRegister" />
+
+    <EditText
+        android:id="@+id/etPasswordRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_extra_large_margin"
+        android:background="@drawable/bg_rounded"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="@dimen/double_extra_small_padding"
+        android:ems="10"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword"
+        android:padding="@dimen/double_extra_large_padding"
+        android:textColor="@color/white_light"
+        android:textColorHint="@color/white_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailRegister" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_extra_large_margin"
+        android:background="@drawable/bg_rounded"
+        android:drawableTint="@color/white_light"
+        android:text="@string/register_now"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/frost_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister" />
+
+    <TextView
+        android:id="@+id/tvGoToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/triple_extra_large_margin"
+        android:layout_marginEnd="@dimen/triple_extra_large_margin"
+        android:text="@string/you_have_an_account"
+        android:textColor="@color/white_light"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+    <ImageView
+        android:id="@+id/viewAppNameRegister"
+        android:layout_width="245dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/viewRegister"
+        android:layout_width="168dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewAppNameRegister" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

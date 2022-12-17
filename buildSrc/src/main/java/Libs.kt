@@ -21,10 +21,13 @@ object Libs {
         const val extensions = "androidx.lifecycle:lifecycle-extensions:" + Versions.extensions
         const val safeArgs =
             "androidx.navigation:navigation-safe-args-gradle-plugin:" + Versions.safeArgs
+        const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:" + Versions.swipe_refresh
     }
 
     object Google {
         const val material = "com.google.android.material:material:" + Versions.material
+        const val firebase_auth = "com.google.firebase:firebase-auth-ktx:" + Versions.firebase_auth
+        const val google_services = "com.google.gms:google-services:" + Versions.google_services
     }
 
     object Hilt {
@@ -57,5 +60,9 @@ object Libs {
         const val junit = "junit:junit:" + Versions.junit
         const val testExt = "androidx.test.ext:junit:" + Versions.testExt
         const val espresso = "androidx.test.espresso:espresso-core:" + Versions.espresso
+    }
+
+    object View {
+        const val lottie = "com.airbnb.android:lottie:" + Versions.lottie
     }
 }

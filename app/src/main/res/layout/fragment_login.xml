@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/essential_color"
+    android:padding="@dimen/large_padding"
+    tools:context=".presentation.login.LoginFragment">
+
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/bg_rounded"
+        android:drawableStart="@drawable/ic_user"
+        android:drawablePadding="@dimen/double_extra_small_padding"
+        android:drawableTint="@color/white_light"
+        android:ems="10"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/double_extra_large_padding"
+        android:textColor="@color/white_light"
+        android:textColorHint="@color/white_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLogin" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_extra_large_margin"
+        android:background="@drawable/bg_rounded"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="@dimen/double_extra_small_padding"
+        android:drawableTint="@color/white_light"
+        android:ems="10"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword"
+        android:padding="@dimen/double_extra_large_padding"
+        android:textColor="@color/white_light"
+        android:textColorHint="@color/white_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_extra_large_margin"
+        android:background="@drawable/bg_rounded"
+        android:drawableTint="@color/white_light"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/frost_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+    <TextView
+        android:id="@+id/tvGoToRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/triple_extra_large_margin"
+        android:layout_marginEnd="@dimen/triple_extra_large_margin"
+        android:text="@string/you_don_t_have_an_account"
+        android:textColor="@color/white_light"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <ImageView
+        android:id="@+id/ivAppNameLogin"
+        android:layout_width="245dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/viewLogin"
+        android:layout_width="108dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivAppNameLogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -53,6 +54,7 @@ dependencies {
     implementation Libs.AndroidX.constraintLayout
     implementation Libs.AndroidX.navigation
     implementation Libs.AndroidX.navigationUI
+    implementation Libs.Google.firebase_auth
     testImplementation Libs.Test.junit
     androidTestImplementation Libs.Test.testExt
     androidTestImplementation Libs.Test.espresso
@@ -85,4 +87,10 @@ dependencies {
     // Glide
     implementation Libs.Image.glide
     annotationProcessor Libs.Image.compiler
+
+    // Lottie
+    implementation Libs.View.lottie
+
+    //swipe
+    implementation Libs.AndroidX.swipeRefresh
 }
