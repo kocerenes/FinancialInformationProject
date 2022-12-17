@@ -24,6 +24,7 @@ class FavoriteFragment : Fragment() {
     private val binding get() = _binding!!
     private val favoriteViewModel: FavoriteViewModel by viewModels()
     private val favoriteAdapter by lazy { FavoriteAdapter(::onArticleCLick) }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +34,7 @@ class FavoriteFragment : Fragment() {
         observeFavoriteNews()
         getFavoriteNews()
         swipeToDelete()
+
         return binding.root
     }
 
@@ -63,10 +65,13 @@ class FavoriteFragment : Fragment() {
                             requireView(),
                             "Are you sure?",
                             Snackbar.LENGTH_LONG
-                        )
-                            .setAction("Undo") {
-                                favoriteViewModel.onUndoDeleteClick(event.favoriteEntity)
-                            }.show()
+                        ).setAction("Undo") {
+                            if (favoriteViewModel.favoriteNews.value?.isEmpty() == true) {
+                                setupRecyclerView()
+                            }
+                            favoriteViewModel.onUndoDeleteClick(event.favoriteEntity)
+
+                        }.show()
                     }
                 }
             }
@@ -84,6 +89,9 @@ class FavoriteFragment : Fragment() {
             binding.tvNoData.visibility = View.VISIBLE
         } else {
             favoriteAdapter.news = it
+            binding.rvNews.visibility = View.VISIBLE
+            binding.ivNoData.visibility = View.GONE
+            binding.tvNoData.visibility = View.GONE
         }
         collectEvents()
     }
