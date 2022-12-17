@@ -75,37 +75,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
-    <View
-        android:id="@+id/viewAppNameLogin"
+    <ImageView
+        android:id="@+id/ivAppNameLogin"
         android:layout_width="245dp"
         android:layout_height="75dp"
         android:layout_marginTop="48dp"
-        android:background="@drawable/app_name_hek_news"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <ImageView
         android:id="@+id/viewLogin"
         android:layout_width="108dp"
         android:layout_height="62dp"
         android:layout_marginTop="72dp"
-        android:background="@drawable/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewAppNameLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/ivAppNameLogin" />
 
     <CheckBox
         android:id="@+id/checBoxRememberMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="@color/white_light"
-        android:textSize="@dimen/large_size"
         android:buttonTint="@color/white_light"
         android:text="@string/remember_me"
+        android:textColor="@color/white_light"
+        android:textSize="@dimen/large_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 

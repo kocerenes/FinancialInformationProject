@@ -10,6 +10,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.databinding.FragmentLoginBinding
+import com.ekheek.financialinformationproject.util.Constants
+import com.ekheek.financialinformationproject.util.loadImage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -32,6 +34,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
@@ -41,6 +44,12 @@ class LoginFragment : Fragment() {
         goToRegisterPage()
         onClickLoginButton()
         navigateToHomeFragment()
+        getImages()
+    }
+
+    private fun getImages() = binding.apply {
+        ivAppNameLogin.loadImage(Constants.Images.logo)
+        viewLogin.loadImage(Constants.Images.loginPNG)
     }
 
     private fun getCurrentAuth() = auth.currentUser
@@ -67,7 +76,11 @@ class LoginFragment : Fragment() {
         val password = binding.etPassword.text.toString()
 
         if (email == "" || password == "") {
-            Toast.makeText(requireContext(), getString(R.string.fill_all_fields), Toast.LENGTH_SHORT)
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.fill_all_fields),
+                Toast.LENGTH_SHORT
+            )
                 .show()
         } else {
             auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {

@@ -10,6 +10,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.ekheek.financialinformationproject.R
 import com.ekheek.financialinformationproject.databinding.FragmentRegisterBinding
+import com.ekheek.financialinformationproject.util.Constants
+import com.ekheek.financialinformationproject.util.loadImage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -40,7 +42,13 @@ class RegisterFragment : Fragment() {
         initAuth()
         goToLoginPage()
         onClickRegisterButton()
+        getImages()
         navigateToHomeFragment()
+    }
+
+    private fun getImages() = binding.apply {
+        viewAppNameRegister.loadImage(Constants.Images.logo)
+        viewRegister.loadImage(Constants.Images.registerPNG)
     }
 
     private fun getCurrentAuth() = auth.currentUser
