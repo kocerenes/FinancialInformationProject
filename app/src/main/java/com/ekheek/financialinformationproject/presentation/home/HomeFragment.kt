@@ -1,7 +1,9 @@
 package com.ekheek.financialinformationproject.presentation.home
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -49,9 +51,19 @@ class HomeFragment : Fragment() {
         requestApi()
         onCategoryClick()
         setupSearchView()
+        onSwipeRefresh()
         auth = Firebase.auth // initialize Firebase auth
         onLogOutIconClick()
         return binding.root
+    }
+
+    private fun onSwipeRefresh() {
+        with(binding) {
+            swiperefresh.setOnRefreshListener {
+                requestApi()
+                swiperefresh.isRefreshing = false
+            }
+        }
     }
 
     private fun onLogOutIconClick() = binding.ivLogOut.setOnClickListener {
@@ -64,7 +76,11 @@ class HomeFragment : Fragment() {
             .setMessage(R.string.log_out_question)
             .setPositiveButton(getString(R.string.yes)) { _, _ ->
                 auth.signOut()
-                Toast.makeText(requireContext(), R.string.logged_out_successfully, Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    requireContext(),
+                    R.string.logged_out_successfully,
+                    Toast.LENGTH_LONG
+                ).show()
                 findNavController().navigate(R.id.action_navigation_home_to_navigation_login)
             }.setNegativeButton(getString(R.string.no)) { _, _ ->
 
