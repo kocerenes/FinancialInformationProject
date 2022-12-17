@@ -90,4 +90,7 @@ dependencies {
 
     // Lottie
     implementation Libs.View.lottie
+
+    //swipe
+    implementation Libs.AndroidX.swipeRefresh
 }
