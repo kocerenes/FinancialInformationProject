@@ -91,5 +91,6 @@ dependencies {
     // Lottie
     implementation Libs.View.lottie
 
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    //swipe
+    implementation Libs.AndroidX.swipeRefresh
 }

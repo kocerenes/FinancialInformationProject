@@ -21,6 +21,7 @@ object Libs {
         const val extensions = "androidx.lifecycle:lifecycle-extensions:" + Versions.extensions
         const val safeArgs =
             "androidx.navigation:navigation-safe-args-gradle-plugin:" + Versions.safeArgs
+        const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:" + Versions.swipe_refresh
     }
 
     object Google {

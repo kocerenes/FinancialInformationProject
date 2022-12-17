@@ -24,4 +24,5 @@ object Versions {
     const val lottie = "3.4.0"
     const val firebase_auth = "21.1.0"
     const val google_services = "4.3.14"
+    const val swipe_refresh = "1.1.0"
 }
