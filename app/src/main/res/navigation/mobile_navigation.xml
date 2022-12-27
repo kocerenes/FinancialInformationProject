@@ -26,6 +26,9 @@
             app:popExitAnim="@anim/to_left"
             app:popUpTo="@id/navigation_home"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_navigation_home_to_newsWebViewFragment"
+            app:destination="@id/newsWebViewFragment" />
     </fragment>
 
     <fragment

@@ -11,24 +11,32 @@ import com.ekheek.financialinformationproject.data.remote.model.Article
 import com.ekheek.financialinformationproject.databinding.ItemNewsBinding
 
 class NewsAdapter(
-    private val onArticleClick: ((article: Article) -> Unit)?
+    private val onArticleClick: ((article: Article) -> Unit)?,
+    private val onWebTextClick: ((url: String) -> Unit)?,
 ) : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
 
-    class MyViewHolder(private val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(private val binding: ItemNewsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(
             article: Article,
-            onArticleClick: ((article: Article) -> Unit)?
+            onArticleClick: ((article: Article) -> Unit)?,
+            onWebTextClick: ((url: String) -> Unit)?,
         ) = binding.apply {
             imageView.load(article.urlToImage) {
                 crossfade(600)
                 error(R.drawable.ic_error_placeholder)
             }
             tvNewsName.text = article.title
-            tvAuthor.text = article.source?.name
+            tvAuthor.text = "Source name: " + article.source?.name
             tvPublishedAt.text = article.publishedAt
+            tvAuthorNews.text = "Author(s): " + article.author
 
             root.setOnClickListener {
                 onArticleClick?.invoke(article)
+            }
+
+            tvGoToWebView.setOnClickListener {
+                article.url?.let { it1 -> onWebTextClick?.invoke(it1) }
             }
         }
     }
@@ -56,7 +64,7 @@ class NewsAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(news[position], onArticleClick)
+        holder.bind(news[position], onArticleClick, onWebTextClick)
     }
 
     override fun getItemCount() = news.size

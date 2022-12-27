@@ -81,19 +81,19 @@
                 android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginTop="8dp"
                 android:textSize="@dimen/large_size"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.043"
+                app:layout_constraintHorizontal_bias="0.063"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
+                app:layout_constraintTop_toBottomOf="@+id/tvAuthorDetail" />
 
             <TextView
                 android:id="@+id/textViewContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/extra_large_margin"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.046"
                 app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +103,7 @@
                 android:id="@+id/textViewDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewContent" />
 
@@ -120,6 +120,14 @@
                 app:drawableLeftCompat="@drawable/ic_published_at_white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewNews" />
+
+            <TextView
+                android:id="@+id/tvAuthorDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

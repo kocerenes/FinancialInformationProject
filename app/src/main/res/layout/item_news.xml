@@ -28,27 +28,25 @@
             android:id="@+id/tvNewsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/extra_small_margin"
+            android:layout_marginTop="8dp"
             android:text="@string/fake_news_title"
             android:textColor="@color/black"
             android:textSize="@dimen/large_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAuthorNews" />
 
         <TextView
             android:id="@+id/tvPublishedAt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/extra_small_margin"
-            android:layout_marginBottom="@dimen/extra_small_margin"
             android:drawablePadding="@dimen/double_extra_small_padding"
             android:text="@string/fake_date"
             android:textColor="@color/bodyTextColor"
             app:drawableLeftCompat="@drawable/ic_published_at"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNewsName" />
 
@@ -56,12 +54,34 @@
             android:id="@+id/tvAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_extra_small_margin"
             android:drawablePadding="@dimen/double_extra_small_padding"
             android:text="@string/fake_author"
             android:textColor="@color/bodyTextColor"
-            android:layout_marginTop="@dimen/double_extra_small_margin"
-            app:drawableLeftCompat="@drawable/ic_author"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/tvGoToWebView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/extra_small_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/click_to_see_more"
+            android:textColor="#5454F1"
+            android:textSize="@dimen/extra_large_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPublishedAt" />
+
+        <TextView
+            android:id="@+id/tvAuthorNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

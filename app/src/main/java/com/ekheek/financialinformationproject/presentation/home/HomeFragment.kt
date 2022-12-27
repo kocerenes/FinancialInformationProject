@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
 
-    private val newsAdapter by lazy { NewsAdapter(::onArticleCLick) }
+    private val newsAdapter by lazy { NewsAdapter(::onArticleCLick, ::onWebTextClick) }
 
     private lateinit var categoryAdapter: CategoryAdapter
     private var categoryList = mutableListOf<String>()
@@ -183,6 +183,11 @@ class HomeFragment : Fragment() {
 
     private fun onArticleCLick(article: Article) {
         val action = HomeFragmentDirections.actionHomeFragmentToNewsDetailFragment(article)
+        findNavController().navigate(action)
+    }
+
+    private fun onWebTextClick(url: String) {
+        val action = HomeFragmentDirections.actionNavigationHomeToNewsWebViewFragment(url)
         findNavController().navigate(action)
     }
 }
