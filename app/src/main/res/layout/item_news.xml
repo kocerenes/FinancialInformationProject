@@ -28,7 +28,7 @@
             android:id="@+id/tvNewsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/extra_small_margin"
+            android:layout_marginTop="8dp"
             android:text="@string/fake_news_title"
             android:textColor="@color/black"
             android:textSize="@dimen/large_size"
@@ -36,32 +36,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
-
-        <TextView
-            android:id="@+id/tvPublishedAt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/extra_small_margin"
-            android:layout_marginBottom="@dimen/extra_small_margin"
-            android:drawablePadding="@dimen/double_extra_small_padding"
-            android:text="@string/fake_date"
-            android:textColor="@color/bodyTextColor"
-            app:drawableLeftCompat="@drawable/ic_published_at"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNewsName" />
-
-        <TextView
-            android:id="@+id/tvAuthor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/double_extra_small_padding"
-            android:text="@string/fake_author"
-            android:textColor="@color/bodyTextColor"
-            android:layout_marginTop="@dimen/double_extra_small_margin"
-            app:drawableLeftCompat="@drawable/ic_author"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

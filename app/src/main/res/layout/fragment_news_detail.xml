@@ -53,29 +53,16 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/textViewAuthor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/extra_small_margin"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_corner"
-                android:padding="@dimen/double_extra_small_padding"
-                android:text="@string/example_author"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewNews" />
-
-            <TextView
                 android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginTop="16dp"
                 android:textSize="@dimen/large_size"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.043"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewNews" />
 
             <TextView
                 android:id="@+id/textViewContent"
@@ -94,20 +81,6 @@
                 android:layout_marginTop="@dimen/large_margin"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewContent" />
-
-            <TextView
-                android:id="@+id/textViewPublishedAt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:layout_marginEnd="@dimen/extra_small_margin"
-                android:background="@drawable/rounded_corner"
-                android:drawablePadding="2dp"
-                android:padding="4dp"
-                android:textColor="@color/white"
-                app:drawableLeftCompat="@drawable/ic_published_at_white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewNews" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
