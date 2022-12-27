@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.ekheek.financialinformationproject.R
@@ -40,17 +39,7 @@ class NewsDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindUI(getArticle())
-        onClickSeeDetailsTextView()
         clickFavoriteButton()
-    }
-
-    private fun onClickSeeDetailsTextView() = binding.textViewGoToWebView.setOnClickListener {
-        navigateToWebView(getArticle().url.toString())
-    }
-
-    private fun navigateToWebView(url: String) {
-        val action = NewsDetailFragmentDirections.actionNewsDetailFragmentToNewsWebViewFragment(url)
-        findNavController().navigate(action)
     }
 
     private fun getArticle() = navigationArgs.article

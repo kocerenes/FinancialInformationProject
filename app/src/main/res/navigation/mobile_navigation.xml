@@ -49,24 +49,8 @@
         <argument
             android:name="article"
             app:argType="com.ekheek.financialinformationproject.data.remote.model.Article" />
-        <action
-            android:id="@+id/action_newsDetailFragment_to_newsWebViewFragment"
-            app:destination="@id/newsWebViewFragment"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left"
-            app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right" />
     </fragment>
 
-    <fragment
-        android:id="@+id/newsWebViewFragment"
-        android:name="com.ekheek.financialinformationproject.presentation.webivew.NewsWebViewFragment"
-        android:label="fragment_news_web_view"
-        tools:layout="@layout/fragment_news_web_view">
-        <argument
-            android:name="url"
-            app:argType="string" />
-    </fragment>
     <fragment
         android:id="@+id/navigation_splash"
         android:name="com.ekheek.financialinformationproject.presentation.splash.SplashFragment"
