@@ -89,29 +89,18 @@
         android:id="@+id/viewLogin"
         android:layout_width="108dp"
         android:layout_height="62dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivAppNameLogin" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/all_data_in_the_app_comes_from_newsapi"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="You can access news and news writer contact information details by clicking 'click to go to the news website' button"
+        android:text="All data in the app comes from newsapi.org. You can access news and news writer contact information details by clicking 'click to go to the news website' text."
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
