@@ -46,5 +46,6 @@
     <string name="remember_me">Remember Me</string>
     <string name="read_later">Read Later</string>
     <string name="no_data">No Data</string>
+    <string name="all_data_in_the_app_comes_from_newsapi">All data in the app comes from newsapi.org</string>
 
 </resources>
